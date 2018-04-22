@@ -1,0 +1,39 @@
+<edmx:Edmx
+    xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx" Version="1.0">
+    <edmx:DataServices
+        xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" m:DataServiceVersion="2.0">
+        <Schema
+            xmlns:d="http://schemas.microsoft.com/ado/2007/08/dataservices"
+            xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata"
+            xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="TrialXSTest.XsPSData">
+            <EntityType Name="WBSType">
+                <Key>
+                    <PropertyRef Name="ProjectDefinition"/>
+                    <PropertyRef Name="CostCode"/>
+                    <PropertyRef Name="CostCenter"/>
+                    <PropertyRef Name="CostElement"/>
+                </Key>
+                <Property Name="GlobalProject" Type="Edm.String" MaxLength="8"/>
+                <Property Name="ProjectDefinition" Type="Edm.String" Nullable="false" MaxLength="13"/>
+                <Property Name="ProjectKeyword" Type="Edm.String" MaxLength="14"/>
+                <Property Name="CostReportGroup" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CostReportGroupDesc" Type="Edm.String" MaxLength="20"/>
+                <Property Name="SubGroup" Type="Edm.String" MaxLength="12"/>
+                <Property Name="Discipline" Type="Edm.String" MaxLength="2"/>
+                <Property Name="DisciplineDesc" Type="Edm.String" MaxLength="40"/>
+                <Property Name="CostCode" Type="Edm.String" Nullable="false" MaxLength="4"/>
+                <Property Name="CostCodeDesc" Type="Edm.String" MaxLength="40"/>
+                <Property Name="CostCenter" Type="Edm.String" Nullable="false" MaxLength="11"/>
+                <Property Name="CostCenterDesc" Type="Edm.String" MaxLength="20"/>
+                <Property Name="CostElement" Type="Edm.String" Nullable="false" MaxLength="10"/>
+                <Property Name="CostElementDesc" Type="Edm.String" MaxLength="20"/>
+                <Property Name="BS_h" Type="Edm.Decimal" Precision="10" Scale="3"/>
+                <Property Name="EAC_h" Type="Edm.Decimal" Precision="12" Scale="3"/>
+                <Property Name="AC_h" Type="Edm.Decimal" Precision="12" Scale="3"/>
+            </EntityType>
+            <EntityContainer Name="XsPSData" m:IsDefaultEntityContainer="true">
+                <EntitySet Name="WBS" EntityType="TrialXSTest.XsPSData.WBSType"/>
+            </EntityContainer>
+        </Schema>
+    </edmx:DataServices>
+</edmx:Edmx>
